@@ -26,7 +26,7 @@ No Bugs
 ## Technologies Used
 * CSS for styling.
 * HTML for webpage design.
-* Python3.6.
+* Python3.8.
 * Flask
 ## Dependencies
 * pip
