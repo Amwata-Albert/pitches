@@ -1,6 +1,6 @@
 # One Minute Pitch
-#### This is an online news platform where a user can write his own pitches, read pitches from other users, vote for and review pitches as well as maintain their own profiles., 01/07/2019
-#### By **James Mutahi **
+#### This is an online news platform where a user can write his own pitches, read pitches from other users, vote for and review pitches as well as maintain their own profiles.
+#### By **Amwata Albert**
 ## Description
 This is an online news platform where a user can write his own pitches, read pitches from other users, vote for and review pitches as well as maintain their own profiles.
 ## BDD
@@ -20,7 +20,7 @@ This is an online news platform where a user can write his own pitches, read pit
 * On your terminal run `chmod a+x start.py`
 * On your terminal run `./start.py`
 * Access the live site using the local host provided
-* Or access the live website by clicking on this url https://jamesmutahipitch.herokuapp.com/
+* Or access the live website by clicking on this url 
 ## Known Bugs
 No Bugs
 ## Technologies Used
@@ -31,7 +31,7 @@ No Bugs
 ## Dependencies
 * pip
 ## Support and contact details
-* Email: mutahijames0@gmail.com
+* Email: albertotieno41@gmail.com
 ### License and Copyright details
 * [MIT LICENSE](LICENCE)
-* Copyright (c) 2019**James Mutahi **
+* Copyright (c) 2020**Amwata Albert **
