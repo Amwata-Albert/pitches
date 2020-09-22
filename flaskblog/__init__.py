@@ -4,8 +4,10 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_simplemde import SimpleMDE
-from flaskblog.config import Config
+from config import config_options
 from flask_uploads import UploadSet,configure_uploads,IMAGES
+from flask import Flask, render_template, request
+
 
 
 db = SQLAlchemy()
@@ -18,9 +20,9 @@ photos = UploadSet('photos',IMAGES)
 simple = SimpleMDE()
 
 
-def create_app(config_class=Config):
+def create_app(config_class):
     app = Flask(__name__)
-    app.config.from_object(Config)
+    app.config.from_object(config_options[config_class])
 
     db.init_app(app)
     bcrypt.init_app(app)
@@ -37,5 +39,6 @@ def create_app(config_class=Config):
 
     # configure UploadSet
     configure_uploads(app, photos)
+    #db.create_all()
 
     return app
