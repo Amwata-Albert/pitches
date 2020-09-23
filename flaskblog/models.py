@@ -9,17 +9,14 @@ from flask_login import UserMixin
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-
-class Users(db.Model,UserMixin):
-    __tablename__ = "user"
+class Users(UserMixin, db.Model):
+    __tablename__='users'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    content = db.Column(db.Text, nullable=False)
-    category=db.Column(db.String)
-    likes=db.Column(db.Integer, default=0)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    comments = db.relationship('Comment',backref = "content",lazy = "dynamic")
+    content = db.Column(db.Text(), nullable=False)
+    category=db.Column(db.String(255))
+    comments = db.relationship('Comment',backref="user",lazy = "dynamic")
 
     def __repr__(self):
         return f"user('{self.title}', '{self.date_posted}')"
@@ -54,7 +51,7 @@ class Comment(db.Model):
     __tablename__ = 'comments'
 
     id = db.Column(db.Integer, primary_key=True)
-    comment_content = db.Column(db.String)
+    comment_content = db.Column(db.Text(), nullable=False)
     posted = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     pitch_id = db.Column(db.Integer, db.ForeignKey("post.id"))
