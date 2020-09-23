@@ -1,6 +1,6 @@
 
 from flask_script import Manager,Server
-from flaskblog.models import User
+from flaskblog.models import Users
 from flask_migrate import Migrate, MigrateCommand
 from flaskblog import create_app,db
 
@@ -17,7 +17,7 @@ manager.add_command('server',Server)
 
 @manager.shell
 def make_shell_context():
-    return dict(app = app, db = db, User = User)
+    return dict(app = app, db = db, User = Users)
 
 if __name__ == '__main__':
     manager.run()
